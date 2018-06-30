@@ -1,0 +1,21 @@
+module.exports = {
+    up: (queryInterface, Sequelize) =>
+    queryInterface.createTable('User', {
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        password: DataTypes.STRING,
+        permCU: DataTypes.BOOLEAN,
+        permCUD: DataTypes.BOOLEAN,
+        updatedAt: {
+            type: Sequelize.DATE,
+            allowNull: false
+        },
+        deletedAt: {
+            type: Sequelize.DATE,
+            allowNull: true
+        }
+    })
+}
